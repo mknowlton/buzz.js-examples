@@ -1,0 +1,103 @@
+<div class="controls">
+  <div class="all">
+    <h3>All Sounds</h3>
+    <button id="play">PLAY</button>
+    <button id="stop">STOP</button>
+  </div>
+  
+  <div class="background">
+    <h3>Windy Forest Background</h3>
+    <button id="play">PLAY</button>
+    <button id="stop">STOP</button>
+  </div>
+  
+    <div class="beat">
+    <h3>Thud-Snap Beat</h3>
+    <button id="play">PLAY</button>
+    <button id="stop">STOP</button>
+  </div>
+  
+  <div class="organ">
+    <h3>Weird Organ</h3>
+    <button id="play">PLAY</button>
+    <button id="stop">STOP</button>
+  </div>
+  
+  <div class="cinematic">
+    <h3>Cinematic Soundscape Shit</h3>
+    <button id="play">PLAY</button>
+    <button id="stop">STOP</button>
+  </div>
+</div>
+
+<style>
+div.controls {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+}
+</style>
+
+<script>
+  var background = new buzz.sound("/sounds/windy-forest.mp3")
+    , beat = new buzz.sound("/sounds/beat.wav")
+    , organ = new buzz.sound("/sounds/organ.mp3")
+    , cinematic = new buzz.sound("/sounds/cinematic.wav");
+    
+  var allSounds = new buzz.group([ 
+      background, 
+      beat, 
+      organ,
+      cinematic
+  ]);
+  
+  allSounds.load();
+    
+  // all sounds 
+  $("div.all button#play").click(function () {
+    buzz.all().play().loop();
+  });
+  
+  $("div.all button#stop").click(function () {
+    buzz.all().stop();
+  });
+  
+  // background noise
+  $("div.background button#play").click(function () {
+    background.play().loop();
+  });
+  
+  $("div.background button#stop").click(function () {
+    background.stop();
+  });
+  
+  // the beat
+  $("div.beat button#play").click(function () {
+    beat.play().loop();
+  });
+  
+  $("div.beat button#stop").click(function () {
+    beat.stop();
+  });
+  
+  // the organ
+  $("div.organ button#play").click(function () {
+    organ.play().loop();
+  });
+  
+  $("div.organ button#stop").click(function () {
+    organ.stop();
+  });
+  
+  // cinematic shit
+  $("div.cinematic button#play").click(function () {
+    cinematic.play().loop();
+  });
+  
+  $("div.cinematic button#stop").click(function () {
+    cinematic.stop();
+  });
+
+
+</script

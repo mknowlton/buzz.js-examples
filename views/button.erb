@@ -1,0 +1,30 @@
+<div class="controls">
+  <h3>Play a Beat</h3>
+  <button id="play">PLAY</button>
+  <button id="stop">STOP</button>
+</div>
+<style>
+div.controls {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+}
+</style>
+
+<script>
+  var background = new buzz.sound("/sounds/windy-forest.mp3");
+  background.play().loop();
+
+
+  var beat = new buzz.sound("/sounds/beat.wav");
+
+  $("button#play").click(function () {
+    beat.play().loop();
+  });
+  
+  $("button#stop").click(function () {
+    beat.stop();
+  });
+
+</script
